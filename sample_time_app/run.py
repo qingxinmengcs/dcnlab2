@@ -1,10 +1,13 @@
 from flask import Flask
+import datetime
+
 app = Flask(__name__)
 
 
-@app.route('/')
+@app.route('/time')
 def hello_world():
-    return 'Hello world!'
+    time=datetime.datetime.now().strftime("%H:%M:%S")
+    return time
 
 
 app.run(host='0.0.0.0',
